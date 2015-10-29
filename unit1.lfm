@@ -1,0 +1,581 @@
+object Form1: TForm1
+  Left = 837
+  Height = 391
+  Top = 157
+  Width = 410
+  Caption = 'fast DokuServer'
+  ClientHeight = 391
+  ClientWidth = 410
+  OnCreate = FormCreate
+  LCLVersion = '1.1'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 343
+    Top = 48
+    Width = 410
+    ActivePage = TabSheet1
+    Align = alBottom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Server'
+      ClientHeight = 315
+      ClientWidth = 402
+      object Memo1: TMemo
+        Left = 0
+        Height = 315
+        Top = 0
+        Width = 402
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Utenti'
+      ClientHeight = 315
+      ClientWidth = 402
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 90
+        Top = 0
+        Width = 402
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        DataSource = dsuser
+        TabOrder = 0
+      end
+      object GroupBox2: TGroupBox
+        Left = 0
+        Height = 225
+        Top = 90
+        Width = 402
+        Align = alBottom
+        Caption = 'Dati utente'
+        ClientHeight = 207
+        ClientWidth = 398
+        TabOrder = 1
+        object Label1: TLabel
+          Left = 8
+          Height = 15
+          Top = 3
+          Width = 11
+          Caption = 'ID'
+          ParentColor = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 9
+          Height = 23
+          Top = 20
+          Width = 48
+          DataField = 'id'
+          DataSource = dsuser
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label2: TLabel
+          Left = 64
+          Height = 15
+          Top = 3
+          Width = 35
+          Caption = 'Utente'
+          ParentColor = False
+        end
+        object DBEdit2: TDBEdit
+          Left = 64
+          Height = 23
+          Top = 20
+          Width = 120
+          DataField = 'username'
+          DataSource = dsuser
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label3: TLabel
+          Left = 190
+          Height = 15
+          Top = 0
+          Width = 50
+          Caption = 'Password'
+          ParentColor = False
+        end
+        object DBEdit3: TDBEdit
+          Left = 190
+          Height = 23
+          Top = 17
+          Width = 128
+          DataField = 'password'
+          DataSource = dsuser
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label4: TLabel
+          Left = 9
+          Height = 15
+          Top = 48
+          Width = 87
+          Caption = 'Nome completo'
+          ParentColor = False
+        end
+        object DBEdit4: TDBEdit
+          Left = 9
+          Height = 23
+          Top = 64
+          Width = 138
+          DataField = 'name'
+          DataSource = dsuser
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label5: TLabel
+          Left = 154
+          Height = 15
+          Top = 48
+          Width = 128
+          Caption = 'Cartella home personale'
+          ParentColor = False
+        end
+        object DBEdit5: TDBEdit
+          Left = 154
+          Height = 23
+          Top = 64
+          Width = 208
+          DataField = 'homedir'
+          DataSource = dsuser
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object GroupBox1: TGroupBox
+          Left = 9
+          Height = 88
+          Top = 110
+          Width = 309
+          Caption = 'Diritti di accesso'
+          ClientHeight = 70
+          ClientWidth = 305
+          TabOrder = 5
+          object DBCheckBox1: TDBCheckBox
+            Left = 12
+            Height = 23
+            Top = 8
+            Width = 98
+            Caption = 'Elimina cartella'
+            DataField = 'candeldir'
+            DataSource = dsuser
+            TabOrder = 0
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object DBCheckBox4: TDBCheckBox
+            Left = 12
+            Height = 23
+            Top = 40
+            Width = 100
+            Caption = 'Cambio cartella'
+            DataField = 'canchgdir'
+            DataSource = dsuser
+            TabOrder = 1
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object DBCheckBox5: TDBCheckBox
+            Left = 118
+            Height = 23
+            Top = 40
+            Width = 90
+            Caption = 'Upload'
+            DataField = 'canupload'
+            DataSource = dsuser
+            TabOrder = 2
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object DBCheckBox2: TDBCheckBox
+            Left = 118
+            Height = 23
+            Top = 8
+            Width = 90
+            Caption = 'Elimina file'
+            DataField = 'candelfile'
+            DataSource = dsuser
+            TabOrder = 3
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object DBCheckBox3: TDBCheckBox
+            Left = 214
+            Height = 23
+            Top = 8
+            Width = 90
+            Caption = 'Crea cartella'
+            DataField = 'cancreadir'
+            DataSource = dsuser
+            TabOrder = 4
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object DBCheckBox6: TDBCheckBox
+            Left = 214
+            Height = 23
+            Top = 40
+            Width = 90
+            Caption = 'Download'
+            DataField = 'candownl'
+            DataSource = dsuser
+            TabOrder = 5
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+        end
+        object Button3: TButton
+          Left = 330
+          Height = 73
+          Top = 118
+          Width = 59
+          Caption = 'Applica'
+          OnClick = Button3Click
+          TabOrder = 6
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 366
+          Height = 22
+          Top = 62
+          Width = 23
+          OnClick = SpeedButton1Click
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Informazioni'
+      ClientHeight = 315
+      ClientWidth = 402
+      object Image1: TImage
+        Left = 24
+        Height = 31
+        Top = 24
+        Width = 29
+        Picture.Data = {
+          055449636F6EBE1000000000010001002020000001002000A810000016000000
+          2800000020000000400000000100200000000000001000006400000064000000
+          0000000000000000FFFFFF00D7740848E17909C6E37B09FFE47B09FFE47B09FF
+          E47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FF
+          E47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FF
+          E47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE47B09FFE37B09FFE17909C6
+          D7740848C66A0600D1710748E17A09FFE47C09FFE47C09FFE47C09FFE47C09FF
+          E47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FF
+          E47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FF
+          E47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FFE47C09FF
+          E17A09FFD1710748D77408D2E47C09FFE57C09FFE57C09FFE57C09FFE57C09FF
+          E57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FF
+          E57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FF
+          E57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FFE57C09FF
+          E47C09FFD77408D2D97608FCE57D09FFE57D09FFE57D09FFE57D09FFE57D09FF
+          E57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FF
+          E57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FF
+          E57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FFE57D09FF
+          E57D09FFD97608FCD97807FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FF
+          E57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FF
+          E57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FF
+          E57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FFE57F08FF
+          E57F08FFD97807FFDA7807FFE68008FFE68008FFE68008FFE68008FFE68008FF
+          E68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FF
+          E68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FF
+          E68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FFE68008FF
+          E68008FFDA7807FFDA7907FFE68108FFE68108FFE68108FFE68108FFE68108FF
+          E68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FF
+          E68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FF
+          E68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FFE68108FF
+          E68108FFDA7907FFDA7A07FFE78208FFE78208FFE78208FFE78208FFE78208FF
+          E78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FF
+          E78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FF
+          E78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FFE78208FF
+          E78208FFDA7A07FFDA7C07FFE78408FFE78408FFE78408FFE78408FFE78408FF
+          E78408FFE48208FFDF7F07FFDC7D07FFDB7C07FFDA7C07FFDA7C07FFDA7C07FF
+          DA7C07FFDA7C07FFDA7C07FFDA7C07FFDA7C07FFDA7C07FFDA7C07FFDB7C07FF
+          DC7D07FFDF7F07FFE48208FFE78408FFE78408FFE78408FFE78408FFE78408FF
+          E78408FFDA7C07FFDB7D06FFE88507FFE88507FFE88507FFE88507FFE88507FF
+          E38207FFD97B06FFCC7305FFC56E04FFC26C04FFC26C04FFC26C04FFC26C04FF
+          C26C04FFC26C04FFC26C04FFC26C04FFC26C04FFC26C04FFC26C04FFC26C04FF
+          C56E04FFCC7305FFD97B06FFE38207FFE88507FFE88507FFE88507FFE88507FF
+          E88507FFDB7D06FFDB7E06FFE88707FFE88707FFE88707FFE88707FFE58507FF
+          D87C06FFCD8122FFE9CDACFFF9F2EAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          F9F2EAFFE9CDACFFCD8122FFD87C06FFE58507FFE88707FFE88707FFE88707FF
+          E88707FFDB7E06FFDB7F06FFE88807FFE88807FFE88807FFE88807FFE08306FF
+          D48A2BFFFAF4EDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFAF4EDFFD48A2BFFE08306FFE88807FFE88807FFE88807FF
+          E88807FFDB7F06FFDC8106FFE98A07FFE98A07FFE98A07FFE98A07FFDE8206FF
+          ECCFA9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFECCFA9FFDE8206FFE98A07FFE98A07FFE98A07FF
+          E98A07FFDC8106FFDC8205FFE98B06FFE98B06FFE98B06FFE98B06FFDD8205FF
+          F9F2E7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFF9F2E7FFDD8205FFE98B06FFE98B06FFE98B06FF
+          E98B06FFDC8205FFDD8305FFEA8D06FFEA8D06FFEA8D06FFEA8D06FFE18605FF
+          FEFDFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE08605FFEA8D06FFEA8D06FFEA8D06FF
+          EA8D06FFDD8305FFDD8505FFEA8F06FFEA8F06FFEA8F06FFEA8F06FFE68C06FF
+          F7E4CAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFF7E7D0FFE58B06FFEA8F06FFEA8F06FFEA8F06FF
+          EA8F06FFDD8505FFDE8605FFEB9006FFEB9006FFEB9006FFEB9006FFEA8F06FF
+          EAA641FFFEFCF9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFECB057FFEA8F06FFEB9006FFEB9006FFEB9006FF
+          EB9006FFDE8605FFDF8805FFEC9206FFEC9206FFEC9206FFEC9206FFEC9206FF
+          EB9106FFEDA941FFF6E2C4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFEFCFFF1C075FFEB9106FFEC9206FFEC9206FFEC9206FFEC9206FF
+          EC9206FFDF8805FFDF8904FFEC9305FFEC9305FFEC9305FFEC9305FFEC9305FF
+          EC9305FFEC9305FFE08A04FFF9EFE1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FBF4EAFFE59822FFEC9305FFEC9305FFEC9305FFEC9305FFEC9305FFEC9305FF
+          EC9305FFDF8904FFE08A04FFED9505FFED9505FFED9505FFED9505FFED9505FF
+          ED9505FFED9505FFE58F05FFFEFCF9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          F7E8D3FFE68F05FFED9505FFED9505FFED9505FFED9505FFED9505FFED9505FF
+          ED9505FFE08A04FFE08B04FFED9605FFED9605FFED9605FFED9605FFED9605FF
+          ED9605FFED9605FFEB9405FFF4D5A3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          F1CD95FFEA9405FFED9605FFED9605FFED9605FFED9605FFED9605FFED9605FF
+          ED9605FFE08B04FFE08D04FFED9805FFED9805FFED9805FFED9805FFED9805FF
+          ED9805FFED9805FFED9805FFEC9B11FFF6D7A4FFFDF7EDFFFAEDD6FFF1CB8CFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDF8F0FF
+          EA9E1FFFED9805FFED9805FFED9805FFED9805FFED9805FFED9805FFED9805FF
+          ED9805FFE08D04FFE08E03FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FF
+          EE9904FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FFEC9804FF
+          F2C77DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF6FFEFB757FF
+          ED9804FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FFEE9904FF
+          EE9904FFE08E03FFE08F03FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FF
+          EE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FF
+          ED9A04FFEFB64EFFF8E2BBFFFEFAF3FFFEFCF9FFF7DFB5FFEDA82AFFEE9B04FF
+          EE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FFEE9B04FF
+          EE9B04FFE08F03FFE19003FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FF
+          EF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FF
+          EF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FF
+          EF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FFEF9C04FF
+          EF9C04FFE19003FFE19103FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FF
+          EF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FF
+          EF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FF
+          EF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FFEF9D04FF
+          EF9D04FFE19103FFE29203FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FF
+          F09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FF
+          F09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FF
+          F09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FFF09E04FF
+          F09E04FFE29203FFE09203FFEF9F04FFF0A004FFF0A004FFF0A004FFF0A004FF
+          F0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FF
+          F0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FF
+          F0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FFF0A004FF
+          EF9F04FFE09203FFD98D02F6EC9D03FFF0A103FFF0A103FFF0A103FFF0A103FF
+          F0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FF
+          F0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FF
+          F0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FFF0A103FF
+          EC9D03FFDA8D02FCCD8102C6E19302FFED9D03FFF0A003FFF1A103FFF1A103FF
+          F1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FF
+          F1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FF
+          F1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF1A103FFF0A003FFED9D03FF
+          E19302FFCD8102CFC0750142CD8102FFDA8D02FFE19302FFE39503FFE39503FF
+          E39503FFE39503FFE39503FFE39503FFE39503FFE39503FFE39503FFE39503FF
+          E39503FFE39503FFE39503FFE39503FFE39503FFE39503FFE39503FFE39503FF
+          E39503FFE39503FFE39503FFE39503FFE39503FFE39503FFE19302FFDA8D02FF
+          CD8102FFC0750142FFFFFF00BD73013FC27802C0C67B02F6C77C02FFC77C02FF
+          C77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FF
+          C77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FF
+          C77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC77C02FFC67B02F6C27802C0
+          BD73013FB9700100000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000
+        }
+      end
+      object Label6: TLabel
+        Left = 72
+        Height = 15
+        Top = 40
+        Width = 92
+        Caption = 'fast DokuServer'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label7: TLabel
+        Cursor = crHandPoint
+        Left = 144
+        Height = 15
+        Top = 120
+        Width = 89
+        Caption = 'www.rinorusso.it'
+        Font.Color = 12615680
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label7Click
+      end
+      object Label8: TLabel
+        Left = 144
+        Height = 15
+        Top = 104
+        Width = 85
+        Caption = 'Rino Russo 2013'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label9: TLabel
+        Left = 76
+        Height = 15
+        Top = 64
+        Width = 43
+        Caption = 'Vers. 0.1'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Cursor = crHandPoint
+        Left = 8
+        Height = 15
+        Top = 120
+        Width = 85
+        Caption = 'www.fasttools.it'
+        Font.Color = 12615680
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label10Click
+      end
+      object Label11: TLabel
+        Left = 8
+        Height = 15
+        Top = 104
+        Width = 83
+        Caption = 'fastTOOLS 2013'
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object Button1: TButton
+    Left = 183
+    Height = 25
+    Top = 8
+    Width = 131
+    Anchors = [akTop, akRight]
+    Caption = 'Avvia/Riavvia server'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 327
+    Height = 25
+    Top = 8
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Ferma server'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object IdFTPServer1: TIdFTPServer
+    Bindings = <>
+    DefaultPort = 693
+    Intercept = IdServerInterceptLogFile1
+    OnAfterBind = IdFTPServer1AfterBind
+    OnConnect = IdFTPServer1Connect
+    CommandHandlers = <    
+      item
+        CmdDelimiter = ' '
+        Command = 'GETUSERRIGHT'
+        Disconnect = False
+        Name = 'TIdCommandHandler0'
+        NormalReply.Code = '200'
+        ParamDelimiter = ' '
+        ParseParams = True
+        Tag = 0
+        OnCommand = IdFTPServer1CommandHandlers0Command
+      end>
+    ExceptionReply.Code = '500'
+    ExceptionReply.Text.Strings = (
+      'Unknown Internal Error'
+    )
+    Greeting.Code = '220'
+    Greeting.Text.Strings = (
+      'OMNIDokuServer ready.'
+    )
+    MaxConnectionReply.Code = '300'
+    MaxConnectionReply.Text.Strings = (
+      'Too many connections. Try again later.'
+    )
+    ReplyTexts = <>
+    ReplyUnknownCommand.Code = '500'
+    ReplyUnknownCommand.Text.Strings = (
+      'Unknown Command'
+    )
+    Compressor = IdCompressorZLib1
+    AnonymousAccounts.Strings = (
+      'anonymous'
+      'ftp'
+      'guest'
+    )
+    DefaultDataPort = 693
+    FTPSecurityOptions.RequirePASVFromSameIP = False
+    FTPSecurityOptions.RequirePORTFromSameIP = False
+    OnGreeting = IdFTPServer1Greeting
+    OnAfterUserLogin = IdFTPServer1AfterUserLogin
+    OnChangeDirectory = IdFTPServer1ChangeDirectory
+    OnGetFileSize = IdFTPServer1GetFileSize
+    OnUserLogin = IdFTPServer1UserLogin
+    OnListDirectory = IdFTPServer1ListDirectory
+    OnRenameFile = IdFTPServer1RenameFile
+    OnDeleteFile = IdFTPServer1DeleteFile
+    OnRetrieveFile = IdFTPServer1RetrieveFile
+    OnStoreFile = IdFTPServer1StoreFile
+    OnMakeDirectory = IdFTPServer1MakeDirectory
+    OnRemoveDirectory = IdFTPServer1RemoveDirectory
+    SITECommands = <>
+    MLSDFacts = []
+    OnClientID = IdFTPServer1ClientID
+    ReplyUnknownSITCommand.Code = '500'
+    ReplyUnknownSITCommand.Text.Strings = (
+      'Invalid SITE command.'
+    )
+    left = 88
+    top = 8
+  end
+  object IdServerInterceptLogFile1: TIdServerInterceptLogFile
+    Filename = './dokuserver.log'
+    left = 200
+    top = 13
+  end
+  object IdCompressorZLib1: TIdCompressorZLib
+    left = 24
+    top = 8
+  end
+  object dbfuser: TDbf
+    FilePath = './'
+    IndexDefs = <    
+      item
+        IndexFile = 'USERNAME'
+        SortField = 'USERNAME'
+        Options = [ixPrimary, ixCaseInsensitive]
+      end>
+    TableLevel = 4
+    FilterOptions = []
+    left = 152
+    top = 8
+  end
+  object dsuser: TDatasource
+    DataSet = dbfuser
+    left = 152
+    top = 56
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 224
+    top = 51
+  end
+end

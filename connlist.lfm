@@ -1,0 +1,265 @@
+object Form_srv: TForm_srv
+  Left = 283
+  Height = 456
+  Top = 157
+  Width = 668
+  BorderStyle = bsDialog
+  Caption = 'fast RoFTP - Lista connessioni'
+  ClientHeight = 456
+  ClientWidth = 668
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '1.3'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 456
+    Top = 0
+    Width = 668
+    Align = alClient
+    Caption = 'Lista connessioni preferite'
+    ClientHeight = 438
+    ClientWidth = 664
+    TabOrder = 0
+    object DBGrid2: TDBGrid
+      Left = 6
+      Height = 304
+      Top = 8
+      Width = 312
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Connessione'
+          FieldName = 'descr'
+        end>
+      DataSource = Datasource2
+      TabOrder = 0
+    end
+    object DBEdit1: TDBEdit
+      Left = 336
+      Height = 26
+      Top = 24
+      Width = 318
+      DataField = 'descr'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 341
+      Height = 16
+      Top = 8
+      Width = 147
+      Caption = 'Descrizione connessione'
+      ParentColor = False
+    end
+    object DBEdit2: TDBEdit
+      Left = 336
+      Height = 26
+      Top = 72
+      Width = 192
+      DataField = 'serverurl'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label4: TLabel
+      Left = 341
+      Height = 16
+      Top = 56
+      Width = 65
+      Caption = 'Server FTP'
+      ParentColor = False
+    end
+    object DBEdit3: TDBEdit
+      Left = 542
+      Height = 26
+      Top = 72
+      Width = 112
+      DataField = 'port'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object Label5: TLabel
+      Left = 542
+      Height = 16
+      Top = 56
+      Width = 96
+      Caption = 'Porta (21=pred)'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 341
+      Height = 16
+      Top = 104
+      Width = 41
+      Caption = 'Utente'
+      ParentColor = False
+    end
+    object DBEdit4: TDBEdit
+      Left = 336
+      Height = 26
+      Top = 120
+      Width = 142
+      DataField = 'user'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object Label7: TLabel
+      Left = 497
+      Height = 16
+      Top = 104
+      Width = 58
+      Caption = 'Password'
+      ParentColor = False
+    end
+    object DBEdit5: TDBEdit
+      Left = 497
+      Height = 26
+      Top = 117
+      Width = 157
+      DataField = 'pass'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 342
+      Height = 25
+      Top = 304
+      Width = 297
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 297
+      DataSource = Datasource2
+      Options = []
+      TabOrder = 6
+    end
+    object BitBtn8: TBitBtn
+      Left = 14
+      Height = 25
+      Top = 346
+      Width = 120
+      Caption = 'Test connessione'
+      TabOrder = 7
+      Visible = False
+    end
+    object DBCheckBox1: TDBCheckBox
+      Left = 338
+      Height = 23
+      Top = 256
+      Width = 164
+      Caption = 'Usa modalità PASSIVA'
+      DataField = 'passive'
+      DataSource = Datasource2
+      TabOrder = 8
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+    end
+    object DBCheckBox2: TDBCheckBox
+      Left = 508
+      Height = 23
+      Top = 256
+      Width = 146
+      Caption = 'Traccia connessione'
+      DataField = 'trace'
+      DataSource = Datasource2
+      TabOrder = 9
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+    end
+    object Bevel1: TBevel
+      Left = 6
+      Height = 8
+      Top = 384
+      Width = 649
+      Anchors = [akTop, akLeft, akRight]
+      Shape = bsBottomLine
+    end
+    object Button1: TButton
+      Left = 579
+      Height = 25
+      Top = 400
+      Width = 75
+      Caption = 'Chiudi'
+      OnClick = Button1Click
+      TabOrder = 10
+    end
+    object Button2: TButton
+      Left = 579
+      Height = 25
+      Top = 352
+      Width = 75
+      Caption = 'Connetti'
+      OnClick = Button2Click
+      TabOrder = 11
+    end
+    object Label8: TLabel
+      Left = 342
+      Height = 16
+      Top = 150
+      Width = 156
+      Caption = 'Cartella locale di partenza'
+      ParentColor = False
+    end
+    object DBEdit6: TDBEdit
+      Left = 336
+      Height = 26
+      Top = 165
+      Width = 318
+      DataField = 'localdir'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 12
+    end
+    object Label9: TLabel
+      Left = 341
+      Height = 16
+      Top = 198
+      Width = 137
+      Caption = 'Cartella remota iniziale'
+      ParentColor = False
+    end
+    object DBEdit7: TDBEdit
+      Left = 336
+      Height = 26
+      Top = 213
+      Width = 318
+      DataField = 'remotedir'
+      DataSource = Datasource2
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 13
+    end
+  end
+  object dbsrv: TSdfDataSet
+    FileMustExist = False
+    ReadOnly = False
+    FileName = 'servers.lst'
+    FieldDefs = <>
+    AfterInsert = dbsrvAfterInsert
+    AllowMultiLine = False
+    Delimiter = ','
+    FirstLineAsSchema = True
+    left = 76
+    top = 316
+  end
+  object Datasource2: TDataSource
+    DataSet = dbsrv
+    left = 140
+    top = 316
+  end
+end
